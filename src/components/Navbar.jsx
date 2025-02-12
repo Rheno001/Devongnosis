@@ -18,7 +18,7 @@ function Navbar() {
                 <button onClick={toggleNavbar} className="text-black md:hidden text-[25px]">
                     {isOpen ? <FaTimes /> : <FaBars />}
                 </button>
-                <nav className={`fixed bg-gradient-to-r from-orange-500 to-orange-300 md:bg-none top-0 left-0 h-full w-64 transform transition-transform duration-300 md:static md:flex md:items-center md:justify-center md:w-auto ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+                <nav className={`fixed md:ml-[200px] bg-gradient-to-r from-orange-500 to-orange-300 md:bg-none top-0 left-0 h-full w-64 transform transition-transform duration-300 md:static md:flex md:items-center md:justify-center md:w-auto ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                     <div className="flex flex-col items-center ml-[100px] justify-center mt-[100px] md:mt-0 md:flex-row md:space-x-4 p-4 md:justify-end">
                         <a href="#home" className="relative text-[20px] py-2 my-[10px] text-black group">
                             Home
