@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '../dev2.png'
+import logo from '../devalone.png'
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,9 +11,10 @@ function Navbar() {
 
     return (
         <div className="fixed top-0 left-0 w-full z-50">
-            <div className="flex items-center justify-between py-0 px-[40px] lg:px-[60px] bg-white">
-                <div className="text-white flex items-center justify-center mt-[-20px] text-[20px] font-bold">
-                    <img src={logo} className='w-[130px] md:w-[200px]' alt="" />
+            <div className="flex items-center justify-between py-[0px] px-[40px] lg:px-[60px] bg-white">
+                <div className="text-gray-800 flex items-center justify-center text-[20px] font-bold">
+                    <img src={logo} className='ml-[-20px] w-[90px] md:w-[90px]' alt="" />
+                    <p className='ml-[-20px] font-semibold'>DEVONGNOSIS</p>
                 </div>
                 <button onClick={toggleNavbar} className="text-black lg:hidden text-[25px]">
                     {isOpen ? <FaTimes /> : <FaBars />}
