@@ -27,8 +27,8 @@ function Home() {
                     src={heroimage} 
                     alt="Hero" 
                     className="object-cover w-full h-full" 
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 2.5, repeat: Infinity, repeatType: "loop" }}
+                    animate={{ y: [40, -10, 40] }}
+                    transition={{ duration: 3.5, repeat: Infinity, repeatType: "loop" }}
                 />
             </div>
         </div>
