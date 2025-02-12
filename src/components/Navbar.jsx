@@ -14,22 +14,22 @@ function Navbar() {
             <div className="flex items-center justify-between py-[0px] px-[40px] lg:px-[60px] bg-white">
                 <div className="text-gray-800 flex items-center justify-center text-[20px] font-bold">
                     <img src={logo} className='ml-[-20px] w-[90px] md:w-[90px]' alt="" />
-                    <p className='ml-[-20px] font-semibold'>DEVONGNOSIS</p>
+                    <p className='ml-[-20px] text-[15px] font-semibold'>DEVONGNOSIS</p>
                 </div>
                 <button onClick={toggleNavbar} className="text-black lg:hidden text-[25px]">
                     {isOpen ? <FaTimes /> : <FaBars />}
                 </button>
                 <nav className={`fixed lg:ml-[200px] bg-gradient-to-r from-orange-500 to-orange-300 lg:bg-none top-0 left-0 h-full w-64 transform transition-transform duration-300 lg:static lg:flex lg:items-center lg:justify-center lg:w-auto ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                     <div className="flex flex-col items-center ml-[100px] justify-center mt-[100px] lg:mt-0 lg:flex-row lg:space-x-4 p-4 lg:justify-end">
-                        <a href="#home" className="relative text-[20px] py-2 my-[10px] text-black group">
+                        <a href="#home" className="relative text-[18px] py-2 my-[10px] text-black group">
                             Home
                             <span className="absolute left-0 bottom-0 h-0.5 w-full bg-gradient-to-r from-orange-500 to-orange-300 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                         </a>
-                        <a href="#courses" className="relative text-[20px] py-2 my-[10px] text-black group">
+                        <a href="#courses" className="relative text-[18px] py-2 my-[10px] text-black group">
                             Courses
                             <span className="absolute left-0 bottom-0 h-0.5 w-full bg-gradient-to-r from-orange-500 to-orange-300 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                         </a>
-                        <a href="#trainers" className="relative text-[20px] py-2 my-[10px] text-black group">
+                        <a href="#trainers" className="relative text-[18px] py-2 my-[10px] text-black group">
                             Trainers
                             <span className="absolute left-0 bottom-0 h-0.5 w-full bg-gradient-to-r from-orange-500 to-orange-300 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                         </a>

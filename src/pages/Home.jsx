@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar.jsx'
 import { useInView } from 'react-intersection-observer'
-import heroimage from '../undraw_teaching_58yg.png'
+import heroimage from '../prof.svg'
 import { motion } from 'framer-motion'
 import logo from '../devalone.png'
 import { useEffect, useState } from 'react'; // Ensure useEffect is imported
@@ -39,43 +39,100 @@ function Home() {
     return (
       <div>
         <Navbar/>
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between mt-[50px] py-[0px] h-[600px] px-[60px]">
-            <div className="flex flex-col py-0">
-                <h1 className="text-5xl leading-tight font-bold text-gray-800 text-left">DevonGnosis <br />Education Limited</h1>
-                <p className="text-lg text-left text-gray-600">...building resourceful capacity</p>
-                <button className="border text-[18px] rounded-xl border-none text-white py-2 px-4 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-orange-500 to-orange-300">
+        <div className="flex flex-col-reverse overflow-x-clip md:flex-row items-center justify-between mt-[50px] py-[0px] h-[550px] px-[60px]">
+            <div className="flex flex-col py-[30px] mt-[-50px] md:mt-[0px]">
+                <h1 className="text-4xl lg:text-5xl md:leading-[50px] font-bold text-gray-800 text-left">DevonGnosis <br />Education Limited</h1>
+                <p className="text-lg text-left text-gray-600 mt-[10px]">...building resourceful capacity</p>
+                <button className="border text-[18px] mt-[20px] rounded-xl border-none text-white py-2 px-4 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-orange-500 to-orange-300">
                     Get Started
                 </button>
             </div>
             <div
                 ref={ref}
-                className={`transition-transform duration-700 transform ${inView ? 'translate-x-0' : 'translate-x-80'} h-1/2 md:h-full w-full md:w-1/2`}
+                className={`transition-transform duration-700 transform h-1/2 md:h-full w-full md:w-1/2`}
             >
                 <motion.img 
                     src={heroimage} 
                     alt="Hero" 
-                    className="object-cover h-[400px] w-[400px] lg:w-full lg:h-full" 
-                    animate={{ y: [40, -10, 40] }}
+                    className="object-cover h-[350px] w-[350px] md:h-[400px] md:w-[400px] lg:w-full lg:h-full" 
+                    animate={{ y: [20, -10, 20] }}
                     transition={{ duration: 3.5, repeat: Infinity, repeatType: "loop" }}
                 />
             </div>
         </div>
-        <div ref={ref1} className="md:mt-[-20px] md:absolute right-70 bg-black/8 w-[60%] mx-auto rounded-2xl">
-            <div className="flex justify-around mt-5">
+           <section className='px-[60px] py-[70px] bg-gray-500/20'>
+           <div ref={ref1} className="bg-black/8 w-[80%] md:mt-[-110px] py-[10px] mx-auto rounded-2xl">
+            <div className="flex justify-around mt-5 md:mt-0">
                 <div className="text-center">
-                    <h3 className="text-3xl text-orange-500 font-bold">{students}</h3>
-                    <p className='text-orange-500'>Students</p>
+                    <h3 className="text-3xl text-orange-500 font-bold">{students}+</h3>
+                    <p className='text-gray-600 font-semibold'>Students</p>
                 </div>
                 <div className="text-center">
-                    <h3 className="text-3xl text-orange-500 font-bold">{tutors}</h3>
-                    <p className='text-orange-500'>Tutors</p>
+                    <h3 className="text-3xl text-orange-500 font-bold">{tutors}+</h3>
+                    <p className='text-gray-600 font-semibold'>Tutors</p>
                 </div>
                 <div className="text-center">
-                    <h3 className="text-3xl text-orange-500 font-bold">{courses}</h3>
-                    <p className='text-orange-500'>Courses</p>
+                    <h3 className="text-3xl text-orange-500 font-bold">{courses}+</h3>
+                    <p className='text-gray-600 font-semibold'>Courses</p>
                 </div>
             </div>
            </div> 
+            <div className='mt-[20px]'>
+            <div className='text-left'>
+                <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-left'>About<br/>Devongnosis</h1>
+            </div>
+            <div className='text pr-[20px]'>
+                <p className='text-sm text-left text-gray-600 mt-[10px]'>Devongnosis Education (DGE) is a global network of experienced 
+professionals and consultants assembled with the core objective of 
+providing world-class knowledge-based services to public and private 
+sector institutions within and outside Africa. We leverage on a network of 
+excellent partnership with world renowned training establishments, and 
+business schools as well as ICT organizations in the US, Asia and Europe to 
+provide combined wealth of expertise, re-engineered systems and cutting 
+edge training services across a broad spectrum of sectors.</p>
+
+            </div>
+            </div>
+           </section>
+           <section className='px-[60px] py-[50px]'>
+            <div className='text-left'>
+                <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-left'>Guaranteed and<br />Professional Tutors</h1>
+            </div>
+            <div className='cards flex items-stretch justify-evenly mt-[20px] gap-4'>
+                <div className="card border w-[33.3%] border-orange-500 hover:shadow-lg hover:scale-105 transition-all duration-300 p-4 rounded-lg flex flex-col justify-center items-center h-[200px]">
+                    <h2 className="text-xl font-bold">Our Mission</h2>
+                    <p className="text-gray-600 text-[13px]">Our mission is to create a 
+                                                            platform, build resourceful 
+                                                            capacity, project and bring high 
+                                                            impact development programs 
+                                                            and a wide range of consultancy
+                                                            services that yields exceptional
+                                                            human performance in private 
+                                                            and public sectors</p>
+                </div>
+                <div className="card border w-[33.3%] border-orange-500 hover:shadow-lg hover:scale-105 transition-all duration-300 p-4 rounded-lg flex flex-col justify-center items-center h-[200px]">
+                    <h2 className="text-xl font-bold">Our Vision</h2>
+                    <p className="text-gray-600 text-[13px]">Our vision is to transform the 
+                                                               learning world in delivering 
+                                                               sustainable human capital for 
+                                                               the present and the future</p>
+                </div>
+                <div className="card border w-[33.3%] border-orange-500 hover:shadow-lg hover:scale-105 transition-all duration-300 p-4 rounded-lg flex flex-col justify-center items-center h-[200px]">
+                    <h2 className="text-xl font-bold">Guiding Attitude</h2>
+                    <p className="text-gray-600 text-[13px]">Our primary focus is designing, 
+                                                               developing and delivering both 
+                                                               off-site and on-site training 
+                                                                programmes. Our goal is to help 
+                                                               clients mitigate risks and 
+                                                                maximise returns, while training a 
+                                                               confident and competent 
+                                                                workforce.</p>
+                </div>
+            </div>
+           </section>
+           <section lassName='px-[60px] py-[50px]'>
+
+           </section>
         
         </div>
     );
