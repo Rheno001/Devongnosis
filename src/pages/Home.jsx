@@ -11,7 +11,7 @@ function Home() {
     return (
       <div>
         <Navbar/>
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between mt-[50px] py-[30px] h-screen px-[60px]">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between mt-[50px] py-[0px] h-[600px] px-[60px]">
             <div className="flex flex-col py-0">
                 <h1 className="text-5xl leading-tight font-bold text-gray-800 text-left">DevonGnosis <br />Education Limited</h1>
                 <p className="text-lg text-left text-gray-600">...building resourceful capacity</p>
