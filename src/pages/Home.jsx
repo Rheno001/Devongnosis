@@ -3,9 +3,10 @@ import { useInView } from 'react-intersection-observer'
 import heroimage from '../prof.svg'
 import { motion } from 'framer-motion'
 import logo from '../devalone.png'
-import { useEffect, useState, useRef } from 'react'; // Ensure useEffect is imported
+import { useEffect, useState, useRef } from 'react';
 
 function Home() {
+
     const { ref1, inView1 } = useInView({
         threshold: 0.1,
     });
@@ -35,19 +36,6 @@ function Home() {
             };
         }
     }, [inView]);
-    const coursesRef = useRef(null); // Create a ref for the courses section
-
-const scrollLeft = () => {
-    if (coursesRef.current) {
-        coursesRef.current.scrollBy({ left: -200, behavior: 'smooth' }); // Adjust the scroll amount as needed
-    }
-};
-
-const scrollRight = () => {
-    if (coursesRef.current) {
-        coursesRef.current.scrollBy({ left: 200, behavior: 'smooth' }); // Adjust the scroll amount as needed
-    }
-};
 
     return (
       <div>
@@ -184,54 +172,9 @@ edge training services across a broad spectrum of sectors.</p>
                 </div>
             </div>
            </section>
+           
            <section className='courses px-[60px] py-[50px]'>
-           <div className="relative">
-                <button onClick={scrollLeft} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded">Left</button>
-                <button onClick={scrollRight} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white p-2 rounded">Right</button>
-                <div ref={coursesRef} className="flex flex-col md:flex-row overflow-x-auto space-x-4 py-4 scrollbar-hidden">
-                <div className="card border border-orange-500 hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg flex flex-col items-center w-[33.3%] flex-shrink-0">
-                <img src="path/to/image1.jpg" alt="Course 1" className="w-full h-[100px] object-cover mb-2" />
-                <p className="text-gray-600">Course Description 1</p>
-            </div>
-            <div className="card border border-orange-500 hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg flex flex-col items-center w-[33.3%] flex-shrink-0">
-                <img src="path/to/image2.jpg" alt="Course 2" className="w-full h-[100px] object-cover mb-2" />
-                <p className="text-gray-600">Course Description 2</p>
-            </div>
-            <div className="card border border-orange-500 hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg flex flex-col items-center w-[33.3%] flex-shrink-0">
-                <img src="path/to/image3.jpg" alt="Course 3" className="w-full h-[100px] object-cover mb-2" />
-                <p className="text-gray-600">Course Description 3</p>
-            </div>
-            <div className="card border border-orange-500 hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg flex flex-col items-center w-[33.3%] flex-shrink-0">
-                <img src="path/to/image4.jpg" alt="Course 4" className="w-full h-[100px] object-cover mb-2" />
-                <p className="text-gray-600">Course Description 4</p>
-            </div>
-            <div className="card border border-orange-500 hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg flex flex-col items-center w-[33.3%] flex-shrink-0">
-                <img src="path/to/image5.jpg" alt="Course 5" className="w-full h-[100px] object-cover mb-2" />
-                <p className="text-gray-600">Course Description 5</p>
-            </div>
-            <div className="card border border-orange-500 hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg flex flex-col items-center w-[33.3%] flex-shrink-0">
-                <img src="path/to/image6.jpg" alt="Course 6" className="w-full h-[100px] object-cover mb-2" />
-                <p className="text-gray-600">Course Description 6</p>
-            </div>
-            <div className="card border border-orange-500 hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg flex flex-col items-center w-[33.3%] flex-shrink-0">
-                <img src="path/to/image7.jpg" alt="Course 7" className="w-full h-[100px] object-cover mb-2" />
-                <p className="text-gray-600">Course Description 7</p>
-            </div>
-            <div className="card border border-orange-500 hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg flex flex-col items-center w-[33.3%] flex-shrink-0">
-                <img src="path/to/image8.jpg" alt="Course 8" className="w-full h-[100px] object-cover mb-2" />
-                <p className="text-gray-600">Course Description 8</p>
-            </div>
-            <div className="card border border-orange-500 hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg flex flex-col items-center w-[33.3%] flex-shrink-0">
-                <img src="path/to/image9.jpg" alt="Course 9" className="w-full h-[100px] object-cover mb-2" />
-                <p className="text-gray-600">Course Description 9</p>
-            </div>
-            <div className="card border border-orange-500 hover:shadow-lg transition-shadow duration-300 p-4 rounded-lg flex flex-col items-center w-[33.3%] flex-shrink-0">
-                <img src="path/to/image10.jpg" alt="Course 10" className="w-full h-[100px] object-cover mb-2" />
-                <p className="text-gray-600">Course Description 10</p>
-            </div>
-                </div>
-            </div>
-
+            
            </section>
         
         </div>
