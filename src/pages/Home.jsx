@@ -21,7 +21,7 @@ function Home() {
     useEffect(() => {
         if (inView) {
             const interval1 = setInterval(() => {
-                setStudents((prev) => (prev < 50 ? prev + 1 : prev));
+                setStudents((prev) => (prev < 10 ? prev + 1 : prev));
             }, 100);
             const interval2 = setInterval(() => {
                 setTutors((prev) => (prev < 20 ? prev + 1 : prev));
@@ -42,26 +42,6 @@ function Home() {
         <Navbar/>
         <div className="flex flex-col-reverse overflow-x-clip md:flex-row items-center justify-between mt-[50px] py-[0px] h-[550px] px-[60px] relative">
             <div className="flex flex-col py-[30px] mt-[-50px] md:mt-[0px]">
-            <div className="absolute inset-0 opacity-10">
-                    <svg width="100" height="100" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '0%' }}>
-                        <circle cx="50" cy="50" r="20" fill="orange" />
-                    </svg>
-                    <svg width="80" height="80" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '20%' }}>
-                        <rect width="40" height="40" fill="blue" />
-                    </svg>
-                    <svg width="60" height="60" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '30%' }}>
-                        <polygon points="30,0 60,60 0,60" fill="green" />
-                    </svg>
-                    <svg width="50" height="50" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '20%' }}>
-                        <ellipse cx="25" cy="25" rx="25" ry="15" fill="purple" />
-                    </svg>
-                    <svg width="40" height="40" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '60%' }}>
-                        <line x1="0" y1="0" x2="40" y2="40" stroke="red" strokeWidth="4" />
-                    </svg>
-                    <svg width="30" height="30" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '10%' }}>
-                        <polygon points="15,0 30,30 0,30" fill="yellow" />
-                    </svg>
-                </div>
                 <h1 className="text-4xl lg:text-5xl md:leading-[50px] font-bold text-gray-800 text-left">DevonGnosis <br />Education Limited</h1>
                 <p className="text-lg text-left text-gray-600 mt-[10px]">...building resourceful capacity</p>
                 <button className="border text-[18px] mt-[20px] rounded-xl border-none text-white py-2 px-4 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-orange-500 to-orange-300">
@@ -117,26 +97,6 @@ edge training services across a broad spectrum of sectors.</p>
             </div>
            </section>
            <section className='gu px-[60px] py-[50px] relative'>
-            <div className="absolute inset-0 opacity-10">
-                <svg width="100" height="100" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '90%' }}>
-                    <circle cx="50" cy="50" r="20" fill="orange" />
-                </svg>
-                <svg width="80" height="80" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '10%' }}>
-                    <rect width="40" height="40" fill="blue" />
-                </svg>
-                <svg width="60" height="60" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '40%' }}>
-                    <polygon points="30,0 60,60 0,60" fill="green" />
-                </svg>
-                <svg width="50" height="50" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '20%' }}>
-                    <ellipse cx="25" cy="25" rx="25" ry="15" fill="purple" />
-                </svg>
-                <svg width="40" height="40" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '50%' }}>
-                    <line x1="0" y1="0" x2="40" y2="40" stroke="red" strokeWidth="4" />
-                </svg>
-                <svg width="30" height="30" className="absolute" style={{ top: `${Math.random() * 100}%`, left: '40%' }}>
-                    <polygon points="15,0 30,30 0,30" fill="yellow" />
-                </svg>
-            </div>
             <div className='text-left'>
                 <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-left'>Guaranteed and<br/>Professional Tutors</h1>
             </div>
