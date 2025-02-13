@@ -6,11 +6,11 @@ function Footer() {
     return (
         <footer className="bg-gray-800 text-white py-[60px]">
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-                <div className="flex items-center mb-4 md:mb-0">
+                <div className="flex items-center mr-[30px] md:mr-[0] mb-4 md:mb-0">
                     <img src={logo} alt="Company Logo" className="h-20 mr-3" />
                     <span className="text-xl font-bold ml-[-35px]">DevonGnosis</span>
                 </div>
-                <nav className="flex flex-col md:flex-row mb-4 md:mb-0">
+                <nav className="flex flex-col items-center md:flex-row mb-4 md:mb-0">
                     <a href="#home" className="px-4 py-2 text-orange-500 hover:underline hover:text-orange-300 transition duration-300">Home</a>
                     <a href="#about" className="px-4 py-2 text-orange-500 hover:underline hover:text-orange-300 transition duration-300">About</a>
                     <a href="#services" className="px-4 py-2 text-orange-500 hover:underline hover:text-orange-300 transition duration-300">Services</a>

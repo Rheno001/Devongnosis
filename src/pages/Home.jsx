@@ -62,8 +62,8 @@ function Home() {
                 
             </div>
         </div>
-           <section className='px-[60px] py-[40px] md:py-[70px] bg-gray-500/20'>
-           <div ref={ref1} className="bg-black/8 w-[95%] py-[0px] md:w-[80%] mt-[-80px] md:mt-[-110px] md:py-[10px] mx-auto rounded-3xl">
+           <section className='flex flex-col-reverse items-center md:flex-col px-[60px] pt-[10px] pb-[40px] md:py-[100px] bg-gray-500/20'>
+           <div ref={ref1} className="bg-black/8 w-[95%] pt-[0px] pb-[8px] md:w-[80%] mb-[-70px] md:mt-[-110px] md:py-[10px] mx-auto rounded-3xl">
             <div className="flex justify-around mt-5 md:mt-0 p-0">
                 <div className="text-center">
                     <h3 className="text-xl md:text-3xl text-orange-500 font-bold">{students}+</h3>
