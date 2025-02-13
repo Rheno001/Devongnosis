@@ -42,7 +42,7 @@ function Home() {
         <Navbar/>
         <div className="flex flex-col-reverse overflow-x-clip md:flex-row items-center justify-between mt-[50px] py-[0px] h-[550px] px-[60px] relative">
             <div className="flex flex-col py-[30px] mt-[-50px] md:mt-[0px]">
-                <h1 className="text-4xl lg:text-5xl md:leading-[50px] font-bold text-gray-800 text-left">DevonGnosis <br />Education Limited</h1>
+                <h1 className="text-4xl text-center md:text-left lg:text-5xl md:leading-[50px] font-bold text-gray-800">DevonGnosis <br />Education Limited</h1>
                 <p className="text-lg text-left text-gray-600 mt-[10px]">...building resourceful capacity</p>
                 <button className="border text-[18px] mt-[20px] rounded-xl border-none text-white py-2 px-4 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-orange-500 to-orange-300">
                     Get Started
@@ -63,8 +63,8 @@ function Home() {
             </div>
         </div>
            <section className='px-[60px] py-[40px] md:py-[70px] bg-gray-500/20'>
-           <div ref={ref1} className="bg-black/8 w-[95%] md:w-[80%] md:mt-[-110px] py-[5px] md:py-[10px] mx-auto rounded-3xl">
-            <div className="flex justify-around mt-5 md:mt-0">
+           <div ref={ref1} className="bg-black/8 w-[95%] py-[0px] md:w-[80%] mt-[-80px] md:mt-[-110px] md:py-[10px] mx-auto rounded-3xl">
+            <div className="flex justify-around mt-5 md:mt-0 p-0">
                 <div className="text-center">
                     <h3 className="text-xl md:text-3xl text-orange-500 font-bold">{students}+</h3>
                     <p className='text-gray-600 font-semibold'>Students</p>
@@ -101,7 +101,7 @@ edge training services across a broad spectrum of sectors.</p>
                 <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-left'>Guaranteed and<br/>Professional Tutors</h1>
             </div>
             <div className='cards flex flex-col items-center md:flex-row md:items-stretch justify-evenly mt-[20px] gap-4'>
-                <div className="card w-[100%] lg:w-[33.3%] relative bg-black/10 hover:shadow-lg hover:scale-105 transition-all duration-300 p-4 rounded-lg flex flex-col justify-center items-center h-[200px]">
+                <div className="card text-center md:text-left w-[100%] lg:w-[33.3%] relative bg-black/10 hover:shadow-lg hover:scale-105 transition-all duration-300 p-4 rounded-lg flex flex-col justify-center items-center h-[200px]">
                     <h2 className="text-xl font-bold text-orange-500">Our Mission</h2>
                     <p className="text-gray-600 text-[13px]">Our mission is to create a 
                                                             platform, build resourceful 
@@ -112,14 +112,14 @@ edge training services across a broad spectrum of sectors.</p>
                                                             human performance in private 
                                                             and public sectors</p>
                 </div>
-                <div className="card w-[100%] lg:w-[33.3%] relative bg-black/10 hover:shadow-lg hover:scale-105 transition-all duration-300 p-4 rounded-lg flex flex-col justify-center items-center h-[200px]">
+                <div className="card text-center md:text-left w-[100%] lg:w-[33.3%] relative bg-black/10 hover:shadow-lg hover:scale-105 transition-all duration-300 p-4 rounded-lg flex flex-col justify-center items-center h-[200px]">
                     <h2 className="text-xl font-bold text-orange-500">Our Vision</h2>
                     <p className="text-gray-600 text-[13px]">Our vision is to transform the 
                                                                learning world in delivering 
                                                                sustainable human capital for 
                                                                the present and the future</p>
                 </div>
-                <div className="card w-[100%] lg:w-[33.3%] relative bg-black/10 hover:shadow-lg hover:scale-105 transition-all duration-300 p-4 rounded-lg flex flex-col justify-center items-center h-[200px]">
+                <div className="card text-center md:text-left w-[100%] lg:w-[33.3%] relative bg-black/10 hover:shadow-lg hover:scale-105 transition-all duration-300 p-4 rounded-lg flex flex-col justify-center items-center h-[200px]">
                     <h2 className="text-xl font-bold text-orange-500">Guiding Attitude</h2>
                     <p className="text-gray-600 text-[13px]">Our primary focus is designing, 
                                                                developing and delivering both 
