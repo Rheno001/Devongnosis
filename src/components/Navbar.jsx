@@ -11,10 +11,10 @@ function Navbar() {
 
     return (
         <div className="fixed top-0 left-0 w-full z-50">
-            <div className="flex items-center justify-between py-[0px] px-[40px] lg:px-[60px] bg-white">
-                <div className="text-gray-800 flex items-center justify-center text-[20px] font-bold">
-                    <img src={logo} className='ml-[-20px] w-[90px] md:w-[90px]' alt="" />
-                    <p className='ml-[-20px] text-[15px] font-semibold'>DEVONGNOSIS</p>
+            <div className="flex items-center justify-between py-0 px-[40px] lg:px-[60px] bg-white">
+                <div className="text-gray-800 p-0 flex items-center justify-center text-[20px] font-bold">
+                    <img src={logo} className='p-0 h-[60px] ml-[-20px] w-[60px] md:w-[90px]' alt="" />
+                    <p className='ml-[-15px] md:ml-[-25px] text-gray-600 text-[8px] md:text-[15px] font-bold leading-[7px] md:leading-[13px]'>DEVONGNOSIS<br/>EDUCATION</p>
                 </div>
                 <button onClick={toggleNavbar} className="text-black lg:hidden text-[25px]">
                     {isOpen ? <FaTimes /> : <FaBars />}
