@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import heroimage from '../prof.svg'
 import { motion } from 'framer-motion'
 import logo from '../devalone.png'
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 function Home() {
 
