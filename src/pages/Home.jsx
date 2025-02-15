@@ -55,7 +55,7 @@ function Home() {
                 <motion.img 
                     src={heroimage} 
                     alt="Hero" 
-                    className="object-cover h-[250px] w-[250px] md:h-[350px] md:w-[350px] lg:w-[450px] lg:h-[400px]" 
+                    className="object-cover h-[250px] w-[250px] md:h-[350px] md:w-[350px] lg:w-[450px] lg:h-[400px] xl:w-[550px]" 
                     animate={{ y: [20, -10, 20] }}
                     transition={{ duration: 3.5, repeat: Infinity, repeatType: "loop" }}
                 />
