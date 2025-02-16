@@ -4,6 +4,13 @@ import heroimage from '../prof.svg'
 import { motion } from 'framer-motion'
 import logo from '../devalone.png'
 import { useEffect, useState } from 'react';
+import gen from '../gen.jpg'
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation";
+import About from '../components/About.jsx'
+import Courses from '../pages/Courses.jsx'
+import Testimonials from '../components/Testimonials.jsx'
+
 
 function Home() {
 
@@ -40,62 +47,77 @@ function Home() {
     return (
       <div>
         <Navbar/>
-        <div className="flex flex-col-reverse overflow-x-clip md:flex-row items-center justify-between mt-[50px] py-[0px] h-[550px] px-[60px] relative">
-            <div className="flex flex-col py-[30px] mt-[-50px] md:mt-[0px]">
-                <h1 className="text-4xl text-center md:text-left lg:text-5xl md:leading-[50px] font-bold text-gray-800">DevonGnosis <br />Education Limited</h1>
-                <p className="text-lg text-left text-gray-600 mt-[10px]">...building resourceful capacity</p>
-                <button className="border text-[18px] mt-[20px] rounded-xl border-none text-white py-2 px-4 transition-all duration-300 hover:scale-105 bg-gradient-to-r from-orange-500 to-orange-300">
-                    Get Started
-                </button>
-            </div>
-            <div
-                ref={ref}
-                className={`transition-transform duration-700 transform h-1/2 md:h-full w-full md:w-1/2`}
-            >
-                <motion.img 
-                    src={heroimage} 
-                    alt="Hero" 
-                    className="object-cover h-[250px] w-[250px] md:h-[350px] md:w-[350px] lg:w-[450px] lg:h-[400px] xl:w-[550px]" 
-                    animate={{ y: [20, -10, 20] }}
-                    transition={{ duration: 3.5, repeat: Infinity, repeatType: "loop" }}
-                />
-                
-            </div>
+        <section className="relative w-full h-screen bg-gray-100 flex items-center justify-center overflow-hidden">
+      <div className="hero-oops absolute inset-0 bg-cover bg-center">
+        <div className="absolute inset-0 bg-gray-700 opacity-50 backdrop-blur-lg"></div>
+      </div>
+      
+      {/* Animated Background Shapes */}
+      <div className="absolute inset-0 flex justify-around items-center opacity-30">
+        <motion.div 
+          className="w-32 h-32 bg-orange-500 rounded-full absolute top-10 left-10"
+          animate={{ y: [0, 30, 0], rotate: [0, 360] }}
+          transition={{ repeat: Infinity, duration: 6 }}
+        />
+        <motion.div 
+          className="w-40 h-40 bg-gray-500 rounded-full absolute bottom-10 right-10"
+          animate={{ y: [0, -30, 0], rotate: [0, -360] }}
+          transition={{ repeat: Infinity, duration: 8 }}
+        />
+        <motion.div 
+          className="w-28 h-28 bg-orange-300 rounded-full absolute top-1/3 left-1/4"
+          animate={{ x: [0, 40, 0], rotate: [0, 180] }}
+          transition={{ repeat: Infinity, duration: 7 }}
+        />
+        <motion.div 
+          className="w-36 h-36 bg-gray-400 rounded-full absolute bottom-1/4 right-1/3"
+          animate={{ x: [0, -40, 0], rotate: [0, -180] }}
+          transition={{ repeat: Infinity, duration: 9 }}
+        />
+      </div>
+      
+      <div className="relative z-10 text-center text-white px-6 md:px-12 lg:px-24">
+        <motion.h1 
+          className="text-4xl mt-[60px] md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-orange-500 to-orange-300 bg-clip-text text-transparent drop-shadow-md"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <TypeAnimation
+            sequence={["Devognosis Education Limited", 2000, "Building resourceful capacity", 2000]}
+            speed={50}
+            repeat={Infinity}
+          />
+        </motion.h1>
+        <motion.p 
+          className="mt-4 text-lg md:text-xl lg:text-2xl text-gray-200"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          Join our expert-led training programs and take the next step in your career.
+        </motion.p>
+        <motion.div 
+          className="mt-6"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+        >
+          <a href="#courses" className="text-white border-none text-[18px] px-4 py-2 duration-300 rounded-3xl hover:scale-105 bg-gradient-to-r from-orange-500 to-orange-300">
+            Explore Courses
+          </a>
+        </motion.div>
+        
+        {/* Social Media Links */}
+        <div className="mt-6 flex justify-center space-x-4 text-xl">
+          <a href="#" className="text-orange-500 hover:text-orange-400 transition duration-300"><FaFacebook /></a>
+          <a href="#" className="text-orange-500 hover:text-orange-400 transition duration-300"><FaTwitter /></a>
+          <a href="#" className="text-orange-500 hover:text-orange-400 transition duration-300"><FaLinkedin /></a>
+          <a href="#" className="text-orange-500 hover:text-orange-400 transition duration-300"><FaInstagram /></a>
         </div>
-           <section className='flex flex-col-reverse items-center md:flex-col px-[60px] pt-[10px] pb-[40px] md:py-[100px] bg-gray-500/20'>
-           <div ref={ref1} className="bg-black/8 w-[95%] pt-[0px] pb-[8px] md:w-[80%] mb-[-70px] md:mt-[-110px] md:py-[10px] mx-auto rounded-3xl">
-            <div className="flex justify-around mt-5 p-0">
-                <div className="text-center">
-                    <h3 className="text-xl md:text-3xl text-orange-500 font-bold">{students}+</h3>
-                    <p className='text-gray-600 font-semibold'>Students</p>
-                </div>
-                <div className="text-center">
-                    <h3 className="text-xl md:text-3xl text-orange-500 font-bold">{tutors}+</h3>
-                    <p className='text-gray-600 font-semibold'>Tutors</p>
-                </div>
-                <div className="text-center">
-                    <h3 className="text-xl md:text-3xl text-orange-500 font-bold">{courses}+</h3>
-                    <p className='text-gray-600 font-semibold'>Courses</p>
-                </div>
-            </div>
-           </div> 
-            <div className='mt-[20px]'>
-            <div className='text-left'>
-                <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-left'>About<br/>Devongnosis</h1>
-            </div>
-            <div className='text pr-[20px]'>
-                <p className='text-sm text-left text-gray-600 mt-[10px]'>Devongnosis Education (DGE) is a global network of experienced 
-professionals and consultants assembled with the core objective of 
-providing world-class knowledge-based services to public and private 
-sector institutions within and outside Africa. We leverage on a network of 
-excellent partnership with world renowned training establishments, and 
-business schools as well as ICT organizations in the US, Asia and Europe to 
-provide combined wealth of expertise, re-engineered systems and cutting 
-edge training services across a broad spectrum of sectors.</p>
-
-            </div>
-            </div>
-           </section>
+      </div>
+    </section>
+           <About/>
            <section className='gu px-[60px] py-[50px] relative'>
             <div className='text-left'>
                 <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-left'>Guaranteed and<br/>Professional Tutors</h1>
@@ -132,10 +154,30 @@ edge training services across a broad spectrum of sectors.</p>
                 </div>
             </div>
            </section>
-           
-           <section className='courses px-[60px] py-[50px]'>
-            
+           <section className='gu px-[60px] py-[50px] relative'>
+            <div className='text-left'>
+                <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-left'>A message<br/>from the Chairman</h1>
+            </div>
+            <div className='flex flex-col items-center justify-between md:flex-row gap-4 mt-[20px]'>
+                <img src={gen} alt="" className='w-[50%] h-[50%] md:w-[20vw] md:h-[40vh] rounded-lg' />
+                <p className='text-gray-600 text-[13px] text-center md:text-left'>Globally, nations have come to realize that educated society seems to have relative advantage in developing faster than those 
+               that are not. Therefore, education is considered one of the most valuable treasure any nation can give to its citizens. 
+                Functional education should be geared towards the acquisition of knowledge and information as well as relevant 
+                competencies (skills, attitude, aptitude, etc.) Eective education therefore should go beyond mere literacy- ability to read and 
+                write. It should incorporate ability to “do” and “apply” that is, it should equip the 
+               leaners with some form of technical know how. These includes the ability to use working tools according to standard, social 
+                behaviors etc.Devongnosis Education Limited see learning, unlearning and relearning as a 
+               continuous process and we have taken it as our foremost responsibility that we pass the 
+                necessary information that would build capacity of people in all sectors.
+               We are committed to add value to society, improve operational standards, and help 
+              create a stable and well organized workforce in both public and private organizations.
+               We believe in networking to improve standards that is why our team is made of a network of professionals across diverse field and occupation
+               </p>
+            </div>
            </section>
+           <Courses/>
+           
+           <Testimonials/>
         
         </div>
     );

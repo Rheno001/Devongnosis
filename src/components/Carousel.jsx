@@ -1,53 +1,69 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import corner from '../corner.jpg'
 
-const logos = [
-  "/logo1.png",
-  "/logo2.png",
-  "/logo3.png",
-  "/logo4.png",
-  "/logo5.png",
-];
-
-const Carousel = () => {
+const InfiniteCarousel = () => {
   const [isPaused, setIsPaused] = useState(false);
-  const scrollRef = useRef(null);
+  const carouselRef = useRef(null);
 
   useEffect(() => {
-    let scrollInterval;
-    if (!isPaused) {
-      scrollInterval = setInterval(() => {
-        if (scrollRef.current) {
-          scrollRef.current.scrollLeft += 1.5;
+    const scroll = () => {
+      if (carouselRef.current) {
+        if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth / 2) {
+          carouselRef.current.scrollLeft = 0;
+        } else {
+          carouselRef.current.scrollLeft += 1;
         }
-      }, 20);
-    }
-    return () => clearInterval(scrollInterval);
+      }
+    };
+    
+    let interval = setInterval(scroll, 20);
+    if (isPaused) clearInterval(interval);
+    return () => clearInterval(interval);
   }, [isPaused]);
 
   return (
-    <div className="relative overflow-hidden w-full py-[60px]" style={{ transform: "rotate(-10deg)" }}>
+    <div className="relative overflow-hidden w-full py-6 mt-[20px]" style={{ transform: "rotate(0deg)" }}>
       <div
-        ref={scrollRef}
+        ref={carouselRef}
         className="flex gap-8 whitespace-nowrap overflow-hidden"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
       >
-        {[...logos, ...logos].map((logo, index) => (
-          <motion.div
-            key={index}
-            className="w-32 h-20 flex items-center justify-center shrink-0 transition-all duration-300"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            <img
-              src={logo}
-              alt={`Company ${index + 1}`}
-              className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
-            />
-          </motion.div>
-        ))}
+        <div className="w-32 h-20 flex items-center justify-center shrink-0">
+          <img src={corner} alt="Company 1" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+        <div className="w-32 h-20 flex items-center justify-center shrink-0">
+          <img src={corner} alt="Company 2" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+        <div className="w-32 h-20 flex items-center justify-center shrink-0">
+          <img src={corner} alt="Company 3" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+        <div className="w-32 h-20 flex items-center justify-center shrink-0">
+          <img src={corner} alt="Company 4" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+        <div className="w-32 h-20 flex items-center justify-center shrink-0">
+          <img src={corner} alt="Company 5" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+        <div className="w-32 h-20 flex items-center justify-center shrink-0">
+          <img src={corner} alt="Company 6" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+        <div className="w-32 h-20 flex items-center justify-center shrink-0">
+          <img src={corner} alt="Company 7" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+        {/* Duplicate logos for smooth infinite effect */}
+        <div className="w-32 h-20 flex items-center justify-center shrink-0">
+          <img src={corner} alt="Company 1" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+        <div className="w-32 h-20 flex items-center justify-center shrink-0">
+          <img src={corner} alt="Company 2" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
+        <div className="w-32 h-20 flex items-center justify-center shrink-0">
+          <img src={corner} alt="Company 3" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Carousel;
+export default InfiniteCarousel;
