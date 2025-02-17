@@ -11,10 +11,15 @@ const courses = [
   },
   {
     title: "SECURITY TRAINING FOR MILITARY, PARA MILITARY AND THE POLICE",
-    description: " This course would be of great benefit to security agencies, para military bodies, the police, the armed forces, public and private organisations.",
+    description: " This course would be of great benefit to security agencies, para military bodies, the armed forces, public and private organisations.",
     details: "Protection of any vulnerable or valuable asset such as a person, dwelling, community, item, Organisation or nation is a vital necessity. No country can grow or develop without the right security system. ",
-    subClasses: ["Oraganisational Security and Management", "Command and Control and Leadership", "Loss prevention", "Emotional intelligence Cultural and border Intelligence", "Close protection", "Security guarding", "CCTV training", "Door supervisor", "Personal licence", "Close Quarter Battle", "Combat Trauma Medicine", "Marksmanship Mobility Operations", "Amphibious Operations", "Surveillance and Intelligence gathering techniques including Cyber Operations", "Maritime Counter Terrorism including Special Forces diving", "Clearance Diving and Evasive Driving", "Explosive Method of Entry"
-],
+    subClasses: ["Oraganisational Security and Management", "Command and Control and Leadership", "Loss prevention", "Emotional intelligence Cultural and border Intelligence", "Close protection", "Security guarding", "CCTV training", "Door supervisor", "Personal licence", "Close Quarter Battle", "Combat Trauma Medicine", "Marksmanship Mobility Operations", "Amphibious Operations", "Surveillance and Intelligence gathering techniques including Cyber Operations", "Maritime Counter Terrorism including Special Forces diving", "Clearance Diving and Evasive Driving", "Explosive Method of Entry"],
+  },
+  {
+    title: "INFORMATION AND COMMUNICATION TECHNOLOGY",
+    description: "Information communication technology has become an accepted and integral part of everyday life for many people.",
+    details: "ICT include the range of hardware and software devices and programs such as personal computers, assistive technology, scanners, digital cameras, multi-media programs, image editing software, data base and spreadsheet programs.it also includes the communication equipment through which people seek and access information including the internet, e-mail and video conferencing",
+    subClasses: ["SOFWARE ENGINEERING", "MOBILE APP DEVELOPMENT", "DATABASE MANAGEMENT SYSTEM", "COMPUTER NETWORKS", "LAN Administration, Wireless Technology, Server technology, CCNA, CCNP, CCIE", "GRAPHICS AND ANIMATION"],
   },
   {
     title: "ETHICS AND COMPLIANCE",
@@ -41,12 +46,6 @@ const courses = [
     subClasses: ["Fashion design", "Ankara craft", "Products and cream making", "Professional make over", "Microsoft office", "Fruit art training", "Organic skin care", "Pastries", "Solar installation", "Maintenance and management services", "Photography and video editing", "Research and statistical analysis", "Bead making", "Fish farming", "Wood work", "Metal work", "Computer repair and networking", "Driving"],
   },
   {
-    title: "INFORMATION AND COMMUNICATION TECHNOLOGY",
-    description: "Information communication technology has become an accepted and integral part of everyday life for many people.",
-    details: "ICT include the range of hardware and software devices and programs such as personal computers, assistive technology, scanners, digital cameras, multi-media programs, image editing software, data base and spreadsheet programs.it also includes the communication equipment through which people seek and access information including the internet, e-mail and video conferencing",
-    subClasses: ["SOFWARE ENGINEERING", "MOBILE APP DEVELOPMENT", "DATABASE MANAGEMENT SYSTEM", "COMPUTER NETWORKS", "LAN Administration, Wireless Technology, Server technology, CCNA, CCNP, CCIE", "GRAPHICS AND ANIMATION"],
-  },
-  {
     title: "DIGITAL MARKETING AND SOCIAL SELLING",
     description: "This course would help participants understand the dynamics behind the digital marketing.",
     details: "Digital marketing refers to advertising delivered through digital channels such as search engines, websites, social media, e-mail and mobile apps.it is also the promotion of brands via one or more forms of electronic media.",
@@ -58,7 +57,7 @@ function CoursesSection() {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
   return (
-    <section className="relative py-20 px-6 md:px-16 bg-gray-100 overflow-hidden">
+    <section className="relative py-[60px] px-[60px] md:px-[60px] bg-gray-100 overflow-hidden">
       <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-50 to-purple-100 transform rotate-6 scale-150 opacity-30"></div>
       <div className="container mx-auto text-center relative z-10">
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-8">
@@ -69,7 +68,7 @@ function CoursesSection() {
         </p>
 
         <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          className="grid grid-cols-1 mx-auto w-[85%] md:w-full sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -78,7 +77,7 @@ function CoursesSection() {
           {courses.map((course, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 cursor-pointer flex flex-col justify-between h-full"
+              className="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 cursor-pointer justify-center h-full"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -87,7 +86,7 @@ function CoursesSection() {
               <h3 className="text-xl font-semibold text-gray-800">{course.title}</h3>
               <p className="text-gray-600 mt-2 flex-grow">{course.description}</p>
               <button
-                className="mt-4 text-white px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-300 hover:scale-105 transition duration-300"
+                className="mt-4 w-[50%] mx-auto text-white px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-300 hover:scale-105 transition duration-300"
                 onClick={() => setSelectedCourse(course)}
               >
                 See More
