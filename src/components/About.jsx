@@ -57,7 +57,7 @@ function AboutSection({ students, tutors, courses }) {
       </div>
 
       {/* About Section */}
-      <div className="relative z-30 mt-10 text-left">
+      <div className="relative z-30 mt-10 text-center md:text-left">
         <h1 className="text-3xl lg:text-4xl font-bold text-gray-800">
           About<br />Devognosis
         </h1>

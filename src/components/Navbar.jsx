@@ -19,7 +19,7 @@ function Navbar() {
                 ></div>
             )}
 
-            <div className="flex items-center justify-between px-6 lg:px-12 py-0">
+            <div className="flex items-center justify-between px-6 lg:px-12 py-2">
                 {/* Logo */}
                 <div className="flex items-center">
                     <img

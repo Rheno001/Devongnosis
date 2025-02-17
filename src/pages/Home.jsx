@@ -120,7 +120,7 @@ function Home() {
            <About/>
            <section className='gu px-[60px] py-[50px] relative'>
             <div className='text-left'>
-                <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-left'>Guaranteed and<br/>Professional Tutors</h1>
+                <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-center md:text-left'>Guaranteed and<br/>Professional Tutors</h1>
             </div>
             <div className='cards flex flex-col items-center md:flex-row md:items-stretch justify-evenly mt-[20px] gap-4'>
                 <div className="card text-center md:text-left w-[100%] lg:w-[33.3%] relative bg-black/10 hover:shadow-lg hover:scale-105 transition-all duration-300 p-4 rounded-lg flex flex-col justify-center items-center h-[200px]">
@@ -156,7 +156,7 @@ function Home() {
            </section>
            <section className='gu px-[60px] py-[50px] relative'>
             <div className='text-left'>
-                <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-left'>A message<br/>from the Chairman</h1>
+                <h1 className='text-3xl lg:text-4xl md:leading-[40px] font-bold text-gray-800 text-center md:text-left'>A message<br/>from the Chairman</h1>
             </div>
             <div className='flex flex-col items-center justify-between md:flex-row gap-4 mt-[20px]'>
                 <img src={gen} alt="" className='w-[50%] h-[50%] md:w-[20vw] md:h-[40vh] rounded-lg' />
