@@ -40,7 +40,7 @@ function Testimonials() {
   }, []);
 
   return (
-    <section className="py-[60px] bg-white mb-[80px] flex flex-col items-center justify-center">
+    <section className="py-[60px] px-[40px] bg-white mb-[180px] flex flex-col items-center justify-center">
       <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-8">
         What Our Students Say
       </h2>
