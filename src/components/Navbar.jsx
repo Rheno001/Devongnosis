@@ -47,7 +47,7 @@ function Navbar() {
                     } z-50`}
                 >
                     <div className="flex flex-col lg:flex-row lg:space-x-6 items-center justify-center mt-16 lg:mt-0 p-6 lg:p-0">
-                        {["Home", "Courses", "Trainers"].map((link) => (
+                        {["Home", "Courses", "Trainers", "About Us"].map((link) => (
                             <a
                                 key={link}
                                 href={`#${link.toLowerCase()}`}
