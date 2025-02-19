@@ -2,30 +2,9 @@
 import React, { useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import logo from '../../assets/devalone-removebg-preview.png'; // Adjust the path to your logo
+import Map from "../../components/Map.jsx"
 
 const ContactPage = () => {
-    const { scrollY } = useScroll();
-    const y = useTransform(scrollY, [0, 300], [0, 50]);
-
-    useEffect(() => {
-        const initMap = () => {
-            const map = new window.google.maps.Map(document.getElementById('map'), {
-                center: { lat: 9.05785, lng: 7.49508 }, // Coordinates for Federal High Court, Abuja
-                zoom: 15,
-                mapTypeId: window.google.maps.MapTypeId.SATELLITE, // Set to satellite view
-            });
-
-            new window.google.maps.Marker({
-                position: { lat: 9.05785, lng: 7.49508 },
-                map,
-                title: 'Federal High Court, Abuja',
-            });
-        };
-
-        if (window.google) {
-            initMap();
-        }
-    }, []);
 
     return (
         <div className="min-h-screen bg-gray-100">
@@ -55,7 +34,7 @@ const ContactPage = () => {
 
             {/* Google Map */}
             <section className="container mx-auto py-12">
-                <div id="map" className="w-full h-96 bg-gray-200"></div>
+                <Map/>
             </section>
 
             {/* Contact Form */}
