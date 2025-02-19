@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../devalone.png';
 
@@ -47,28 +48,33 @@ function Navbar() {
                     } z-50`}
                 >
                     <div className="flex flex-col lg:flex-row lg:space-x-6 items-center justify-center mt-16 lg:mt-0 p-6 lg:p-0">
-                        {["Home", "Courses", "Trainers", "About Us"].map((link) => (
-                            <a
-                                key={link}
-                                href={`#${link.toLowerCase()}`}
+                        {[
+                            { name: "Home", path: "/" },
+                            { name: "Courses", path: "/courses" },
+                            { name: "Trainers", path: "/trainers" },
+                            { name: "About Us", path: "/about" }
+                        ].map((link) => (
+                            <Link
+                                key={link.name}
+                                to={link.path}
                                 className="relative text-lg py-3 text-white lg:text-gray-800 group transition-all"
                                 onClick={() => setIsOpen(false)}
                             >
-                                {link}
+                                {link.name}
                                 <span className="absolute left-0 bottom-0 h-0.5 w-full bg-white lg:bg-gradient-to-r from-orange-500 to-orange-300 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </nav>
 
                 {/* Contact Us Button */}
                 <div className="hidden lg:flex">
-                    <a
-                        href="#contact"
+                    <Link
+                        to="/contact"
                         className="text-white text-lg px-6 py-2 rounded-3xl bg-gradient-to-r from-orange-500 to-orange-300 transition-transform duration-300 hover:scale-105"
                     >
                         Contact Us
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
@@ -76,4 +82,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

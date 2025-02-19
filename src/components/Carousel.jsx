@@ -1,69 +1,87 @@
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import corner from '../corner.jpg'
+'use client';
 
-const InfiniteCarousel = () => {
-  const [isPaused, setIsPaused] = useState(false);
+import React, { useEffect, useRef, useState } from "react";
+
+// Import company logos
+import logo1 from "../AAPM.png";
+import logo2 from "../AAPM.png";
+import logo3 from "../AAPM.png";
+import logo4 from "../AAPM.png";
+import logo5 from "../AAPM.png";
+import logo6 from "../AAPM.png";
+import logo7 from "../AAPM.png";
+import logo8 from "../AAPM.png";
+import logo9 from "../AAPM.png";
+
+const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9];
+
+const LogoCarousel = () => {
   const carouselRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
     const scroll = () => {
-      if (carouselRef.current) {
-        if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth / 2) {
+      if (carouselRef.current && !isDragging) {
+        carouselRef.current.scrollLeft += 1;
+        if (
+          carouselRef.current.scrollLeft >=
+          carouselRef.current.scrollWidth / 2
+        ) {
           carouselRef.current.scrollLeft = 0;
-        } else {
-          carouselRef.current.scrollLeft += 1;
         }
       }
     };
-    
-    let interval = setInterval(scroll, 20);
-    if (isPaused) clearInterval(interval);
+
+    const interval = setInterval(scroll, 20);
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isDragging]);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - carouselRef.current.offsetLeft);
+    setScrollLeft(carouselRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    carouselRef.current.scrollLeft = scrollLeft - walk;
+  };
 
   return (
-    <div className="relative overflow-hidden w-full py-6 mt-[20px]" style={{ transform: "rotate(0deg)" }}>
-      <div
-        ref={carouselRef}
-        className="flex gap-8 whitespace-nowrap overflow-hidden"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        <div className="w-32 h-20 flex items-center justify-center shrink-0">
-          <img src={corner} alt="Company 1" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-        </div>
-        <div className="w-32 h-20 flex items-center justify-center shrink-0">
-          <img src={corner} alt="Company 2" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-        </div>
-        <div className="w-32 h-20 flex items-center justify-center shrink-0">
-          <img src={corner} alt="Company 3" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-        </div>
-        <div className="w-32 h-20 flex items-center justify-center shrink-0">
-          <img src={corner} alt="Company 4" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-        </div>
-        <div className="w-32 h-20 flex items-center justify-center shrink-0">
-          <img src={corner} alt="Company 5" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-        </div>
-        <div className="w-32 h-20 flex items-center justify-center shrink-0">
-          <img src={corner} alt="Company 6" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-        </div>
-        <div className="w-32 h-20 flex items-center justify-center shrink-0">
-          <img src={corner} alt="Company 7" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-        </div>
-        {/* Duplicate logos for smooth infinite effect */}
-        <div className="w-32 h-20 flex items-center justify-center shrink-0">
-          <img src={corner} alt="Company 1" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-        </div>
-        <div className="w-32 h-20 flex items-center justify-center shrink-0">
-          <img src={corner} alt="Company 2" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
-        </div>
-        <div className="w-32 h-20 flex items-center justify-center shrink-0">
-          <img src={corner} alt="Company 3" className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300" />
+    <section className="py-12 overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div
+          ref={carouselRef}
+          className="flex gap-6 overflow-x-auto whitespace-nowrap scroll-smooth"
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          style={{ scrollbarWidth: "none" }}
+        >
+          {[...logos, ...logos].map((logo, index) => (
+            <div key={index} className="w-35 h-20 flex items-center justify-center shrink-0 hover:scale-110 duration-300">
+              <img src={logo} alt={`Company logo ${index + 1}`} className="w-full h-auto" />
+              <div className="absolute inset-0 bg-opacity-50 transition-opacity duration-300 hover:bg-opacity-0"></div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default InfiniteCarousel;
+export default LogoCarousel;

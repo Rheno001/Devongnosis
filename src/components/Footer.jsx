@@ -3,7 +3,7 @@ import logo from "../devalone.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12 mt-[50px]">
+    <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
         
         {/* Company Info */}
@@ -46,7 +46,7 @@ export default function Footer() {
               placeholder="Enter your email"
               className="px-4 py-2 w-full rounded-l-md text-white focus:outline-none"
             />
-            <button className="px-4 py-2 bg-orange-500 rounded-r-md hover:bg-orange-400 transition">
+            <button className="px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-300 rounded-r-md hover:bg-orange-400 transition">
               Subscribe
             </button>
           </div>

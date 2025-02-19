@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const testimonials = [
   {
-    quote: " am very satisfied with the training. I rate this training 101% and I will improve my capacity as with the aim of comptroller general mission for creating this capacity building training programme workshop.",
+    quote: "I am very satisfied with the training. I rate this training 101% and I will improve my capacity as with the aim of comptroller general mission for creating this capacity building training programme workshop.",
     name: "Sarki B",
     role: "Nigerian Customs Service",
   },
@@ -40,9 +40,9 @@ function Testimonials() {
   }, []);
 
   return (
-    <section className="py-[60px] px-[40px] bg-white mb-[180px] flex flex-col items-center justify-center">
+    <section className="py-[60px] px-[40px] bg-none mb-[180px] flex flex-col items-center justify-center">
       <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-8">
-        What Our Students Say
+        What Our <span className="text-orange-500">Students</span> Say
       </h2>
 
       <div className="relative w-full max-w-3xl px-6">
