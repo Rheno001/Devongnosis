@@ -71,7 +71,7 @@ function Navbar() {
                 <div className="hidden lg:flex">
                     <Link
                         to="/contact"
-                        className="text-white text-lg px-6 py-2 rounded-3xl bg-gradient-to-r from-orange-500 to-orange-300 transition-transform duration-300 hover:scale-105"
+                        className="text-white text-lg px-6 py-2 rounded-3xl bg-orange-500 transition-transform duration-300 hover:scale-105 hover:text-orange-500 shadow-md hover:bg-white"
                     >
                         Contact Us
                     </Link>

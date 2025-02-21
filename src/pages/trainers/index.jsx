@@ -71,14 +71,14 @@ const TrainersPage = () => {
     return (
         <div className="min-h-screen bg-gray-100">
             {/* Hero Section */}
-            <section className="bg-blue-500 h-screen flex items-center text-white py-20 relative overflow-hidden">
+            <section className="bg-gray-300 flex items-center text-white py-20 relative overflow-hidden">
                 <motion.img
                     src={logo}
                     alt="Organization Logo"
                     className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-40 md:w-60 md:h-60"
                     style={{ y }}
                 />
-                <div className="container mx-auto text-center px-4 relative z-10">
+                <div className="container mx-auto text-center mt-[100px] px-4 relative z-10">
                     <h1 className="text-4xl font-bold mb-4">Meet Our Expert Trainers</h1>
                     <p className="text-lg max-w-2xl mx-auto">
                         Our trainers are industry leaders with years of experience and a passion for teaching. They are dedicated to helping you achieve your learning goals with personalized guidance and support.

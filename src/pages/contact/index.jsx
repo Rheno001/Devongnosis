@@ -1,56 +1,40 @@
 // src/pages/contact/ContactPage.jsx
-import React, { useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import logo from '../../assets/devalone-removebg-preview.png'; // Adjust the path to your logo
+import React from 'react';
+import { motion } from 'framer-motion';
+import heroImage from '../../assets/telly.jpg'; // Adjust the path to your logo
+import backgroundImage from '../../assets/map.jpg'; // Import your background image
 import Map from "../../components/Map.jsx"
 
 const ContactPage = () => {
-
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen" style={{ backgroundImage: `url(${backgroundImage})`, backgroundAttachment: 'fixed', backgroundSize: 'cover' }}>
             {/* Hero Section */}
-            <section className="bg-blue-500 text-white py-20">
-                <div className="container mx-auto text-center">
-                    <h1 className="text-4xl font-bold mb-4">Get in Touch</h1>
-                    <p className="text-lg">We'd love to hear from you!</p>
-                </div>
+            <section
+                className="h-135 bg-cover bg-center flex items-center justify-center"
+                style={{ backgroundImage: `url(${heroImage})` }}
+            >
+                <h1 className="text-6xl font-bold text-white"><span className='text-orange-500'>Contact</span> Us</h1>
             </section>
 
-            {/* Information Cards */}
-            <section className="container mx-auto py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-                    <h2 className="text-xl font-bold mb-2">Phone</h2>
-                    <p className="text-gray-700">+1 234 567 890</p>
-                </div>
-                <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-                    <h2 className="text-xl font-bold mb-2">Email</h2>
-                    <p className="text-gray-700">info@organization.com</p>
-                </div>
-                <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-                    <h2 className="text-xl font-bold mb-2">Address</h2>
-                    <p className="text-gray-700">123 Main Street, City, Country</p>
-                </div>
-            </section>
+            {/* Information and Contact Form Section */}
+            <section className="container mx-auto py-12 flex flex-col md:flex-row gap-8 relative px-[40px]">
 
-            {/* Google Map */}
-            <section className="container mx-auto py-12">
-                <Map/>
-            </section>
+                {/* Contact Information */}
+                <div className="bg-white shadow-lg rounded-lg p-6 text-center z-10 flex-1">
+                    <h2 className="text-xl font-bold mb-2">Contact Information</h2>
+                    <p className="text-gray-700">Phone: +1 234 567 890</p>
+                    <p className="text-gray-700">Email: info@organization.com</p>
+                    <p className="text-gray-700">Address: 123 Main Street, City, Country</p>
+                </div>
 
-            {/* Contact Form */}
-            <section className="container mx-auto py-12">
+                {/* Contact Form */}
                 <motion.div
-                    className="relative bg-white shadow-lg rounded-lg p-8 max-w-md mx-auto"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    className="relative shadow-lg rounded-lg p-8 z-10 flex-1"
+                    style={{ background: 'linear-gradient(135deg, #e0e0e0, #bdbdbd)' }}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <motion.img
-                        src={logo}
-                        alt="Company Logo"
-                        className="absolute top-0 right-0 w-16 h-16 transform -translate-y-1/2 translate-x-1/2"
-                        style={{ y }}
-                    />
                     <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
                     <form className="space-y-4">
                         <div>
@@ -79,7 +63,7 @@ const ContactPage = () => {
                         </div>
                         <motion.button
                             type="submit"
-                            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full bg-orange-500 text-white py-2 rounded-md hover:bg-white hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -87,6 +71,11 @@ const ContactPage = () => {
                         </motion.button>
                     </form>
                 </motion.div>
+            </section>
+
+            {/* Google Map */}
+            <section className="container mx-auto py-12">
+                <Map/>
             </section>
         </div>
     );

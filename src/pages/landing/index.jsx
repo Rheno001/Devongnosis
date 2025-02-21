@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import about from "../../assets/about.jpg"
 import Testimonials from "../../components/Testimonials.jsx"
 import Carousel from "../../components/Carousel.jsx"
+import Hero from "../../components/Hero.jsx"
 
 const images = [
-  "../../assets/about.jpg",
-  "../../assets/about.jpg",
-  "../../assets/about.jpg",
-  "../../assets/about.jpg"
+  "../../assets/bg1.jpg",
+  "../../assets/bg2.jpg",
+  "../../assets/bg3.jpg",
+  "../../assets/bg4.jpg",
+  "../../assets/bg5.jpg"
 ];
 
 const courses = [
@@ -27,42 +29,62 @@ const Landing = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
+  const slideInRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
+  const dropIn = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div className="min-h-screen pb-[60px] bg-gray-100">
       {/* Hero Section with Image Slider */}
-      <div className="relative h-screen w-full overflow-hidden">
-        {images.map((img, index) => (
-          <motion.img
-            key={index}
-            src={img}
-            alt="Hero"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              index === currentImage ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        ))}
-        <div className="absolute inset-0 h-screen bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center">
-          <h1 className="text-4xl md:text-6xl font-bold">Welcome to Our Training Academy</h1>
-          <p className="mt-4 text-lg md:text-xl">Enhance your skills with our world-class courses.</p>
-          <Link to="/courses" className="mt-6 px-6 py-3 bg-white text-orange-500 font-semibold rounded-full shadow-md hover:scale-105 transition-transform">Explore Courses</Link>
-        </div>
-      </div>
+      <Hero/>
 
       {/* About Section */}
-      <div className="py-16 px-6 md:px-16 flex flex-col md:flex-row items-center gap-10">
-        <img src={about} alt="About Us" className="w-full md:w-1/2 rounded-xl shadow-lg" />
-        <div className="md:w-1/2 text-center md:text-left">
+      <motion.div
+        className="py-16 px-6 md:px-16 flex flex-col md:flex-row items-center gap-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.7 }}
+        variants={slideInLeft}
+      >
+        <div className="relative md:w-1/2 flex justify-center">
+            <img
+              src={about}
+              alt="About Us"
+              className="md:w-full rounded-xl shadow-lg"
+            />
+        </div>
+        <motion.div
+          className="md:w-1/2 text-center md:text-left"
+          variants={slideInRight}
+        >
           <h2 className="text-3xl font-semibold text-gray-800"><span className="text-orange-500">About </span>Us</h2>
           <p className="mt-4 text-gray-600">Devongnosis Education (DGE) is a global network of experienced
 professionals and consultants assembled with the core objective of
 providing world-class knowledge-based services to public and private
 sector institutions within and outside Africa.</p>
-          <Link to="/about" className="mt-6 inline-block px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:scale-105 transition-transform">Learn More</Link>
-        </div>
-      </div>
+          <Link to="/about" className="mt-6 inline-block px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:scale-105 transition-transform hover:bg-white hover:text-orange-500">Learn More</Link>
+        </motion.div>
+      </motion.div>
 
       {/* Courses Section with Carousel */}
-      <div className="py-16 px-6 md:px-16 text-center">
+      <motion.div
+        className="py-16 px-6 md:px-16 text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={dropIn}
+      >
         <h2 className="text-3xl font-semibold text-gray-800 mb-8">Our <span className="text-orange-500">Courses</span></h2>
         <div className="overflow-hidden relative w-full">
           <motion.div 
@@ -84,12 +106,18 @@ sector institutions within and outside Africa.</p>
           </motion.div>
         </div>
         <div className="text-center mt-8">
-          <Link to="/courses" className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:scale-105 transition-transform">See More</Link>
+          <Link to="/courses" className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:scale-105 hover:bg-white hover:text-orange-500 transition-transform">See More</Link>
         </div>
-      </div>
+      </motion.div>
 
       {/* FAQ Section */}
-      <div className="py-16 px-6 md:px-16 bg-gradient-to-r from-gray-900 to-gray-700 text-white flex flex-col md:flex-row gap-10">
+      <motion.div
+        className="py-16 px-6 md:px-16 bg-gradient-to-r from-gray-900 to-gray-700 text-white flex flex-col md:flex-row gap-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={slideInLeft}
+      >
         <div className="md:w-1/2">
           <h2 className="text-3xl font-semibold">Frequently Asked <span className="text-orange-500">Questions</span></h2>
           <p className="mt-4 text-lg">Find answers to common questions about our training programs.</p>
@@ -104,20 +132,40 @@ sector institutions within and outside Africa.</p>
             </details>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Testimonials Carousel */}
-      <div className="py-[60px]"><Testimonials/></div>
+      <motion.div
+        className="py-[60px]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={dropIn}
+      >
+        <Testimonials/>
+      </motion.div>
 
       {/* CTA Section */}
-      <div className="hidden md:block py-16 w-[90%] mx-auto rounded-4xl px-6 md:px-16 bg-gray-900 text-center text-white">
+      <motion.div
+        className="hidden md:block py-16 w-[90%] mx-auto rounded-4xl px-6 md:px-16 bg-gray-900 text-center text-white"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={slideInRight}
+      >
         <h2 className="text-3xl font-semibold">Ready to Take Your Skills <span className="text-orange-500">to the Next Level?</span> </h2>
         <p className="mt-4 text-lg">Join our training programs and start learning today. Take the first step towards your dream career!</p>
         <Link to="/contact" className="mt-6 inline-block px-8 py-4 bg-white text-orange-500 font-semibold rounded-full shadow-lg hover:scale-105 transition-transform">Get Started</Link>
-      </div>
-      <div className="mt-[10px]">
+      </motion.div>
+      <motion.div
+        className="mt-[10px]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={dropIn}
+      >
         <Carousel/>
-      </div>
+      </motion.div>
     </div>
   );
 };

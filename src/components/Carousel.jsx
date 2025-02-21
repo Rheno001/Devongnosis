@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 // Import company logos
 import logo1 from "../AAPM.png";
-import logo2 from "../AAPM.png";
+import logo2 from "../Apex.png";
 import logo3 from "../AAPM.png";
 import logo4 from "../AAPM.png";
 import logo5 from "../AAPM.png";
@@ -15,7 +15,7 @@ import logo9 from "../AAPM.png";
 
 const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9];
 
-const LogoCarousel = () => {
+const Carousel = () => {
   const carouselRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -84,4 +84,4 @@ const LogoCarousel = () => {
   );
 };
 
-export default LogoCarousel;
+export default Carousel;
