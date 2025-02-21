@@ -17,19 +17,19 @@ const ContactPage = () => {
             </section>
 
             {/* Information and Contact Form Section */}
-            <section className="container mx-auto py-12 flex flex-col md:flex-row gap-8 relative px-[40px]">
+            <section className="container mx-auto py-12 flex flex-col items-center justify-center md:flex-row gap-8 px-[40px]">
 
                 {/* Contact Information */}
-                <div className="bg-white shadow-lg rounded-lg p-6 text-center z-10 flex-1">
-                    <h2 className="text-xl font-bold mb-2">Contact Information</h2>
-                    <p className="text-gray-700">Phone: +1 234 567 890</p>
-                    <p className="text-gray-700">Email: info@organization.com</p>
-                    <p className="text-gray-700">Address: 123 Main Street, City, Country</p>
+                <div className="bg-white shadow-lg h-[40vh] rounded-lg md:w-1/2 p-6 text-center z-10 flex flex-col items-center justify-center">
+                    <h2 className="text-2xl font-bold mb-2">Contact Information</h2>
+                    <p className="text-gray-700 text-xl">Phone: +1 234 567 890</p>
+                    <p className="text-gray-700 text-xl">Email: info@organization.com</p>
+                    <p className="text-gray-700 text-xl">Address: 123 Main Street, City, Country</p>
                 </div>
 
                 {/* Contact Form */}
                 <motion.div
-                    className="relative shadow-lg rounded-lg p-8 z-10 flex-1"
+                    className="shadow-lg mt-[-60px] md:mt-0 rounded-lg p-8 z-10 flex flex-col md:w-1/2 items-center"
                     style={{ background: 'linear-gradient(135deg, #e0e0e0, #bdbdbd)' }}
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}

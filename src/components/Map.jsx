@@ -1,27 +1,29 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const Map = () => {
-    useEffect(() => {
-        const initMap = () => {
-            const map = new window.google.maps.Map(document.getElementById('map'), {
-                center: { lat: 9.05785, lng: 7.49508 }, // Coordinates for Federal High Court, Abuja
-                zoom: 15,
-                mapTypeId: window.google.maps.MapTypeId.SATELLITE, // Set to satellite view
-            });
+  const mapStyles = {
+    height: "400px",
+    width: "100%"
+  };
 
-            new window.google.maps.Marker({
-                position: { lat: 9.05785, lng: 7.49508 },
-                map,
-                title: 'Federal High Court, Abuja',
-            });
-        };
+  // Replace these coordinates with your organization's actual latitude and longitude
+  const organizationLocation = {
+    lat: 40.712776, // Example: Latitude for New York City
+    lng: -74.005974 // Example: Longitude for New York City
+  };
 
-        if (window.google) {
-            initMap();
-        }
-    }, []);
-
-    return <div id="map" className="w-full h-96 bg-gray-200"></div>;
+  return (
+    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+      <GoogleMap
+        mapContainerStyle={mapStyles}
+        zoom={15}
+        center={organizationLocation}
+      >
+        <Marker position={organizationLocation} />
+      </GoogleMap>
+    </LoadScript>
+  );
 };
 
 export default Map;
