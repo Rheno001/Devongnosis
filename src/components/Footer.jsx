@@ -1,5 +1,6 @@
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import logo from "../devalone.png";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -21,16 +22,7 @@ export default function Footer() {
         <div className="flex flex-col items-center">
           <h2 className="text-lg font-semibold mb-4">Quick Links</h2>
           <ul className="space-y-2">
-            {["Home", "About", "Courses", "Trainers"].map((link) => (
-              <li key={link}>
-                <a
-                  href={`#${link.toLowerCase()}`}
-                  className="text-gray-400 hover:text-orange-400 transition"
-                >
-                  {link}
-                </a>
-              </li>
-            ))}
+          
           </ul>
         </div>
 

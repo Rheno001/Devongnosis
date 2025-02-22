@@ -10,7 +10,7 @@ const ContactPage = () => {
         <div className="min-h-screen" style={{ backgroundImage: `url(${backgroundImage})`, backgroundAttachment: 'fixed', backgroundSize: 'cover' }}>
             {/* Hero Section */}
             <section
-                className="h-135 bg-cover bg-center flex items-center justify-center"
+                className="h-[500px] bg-cover bg-center flex items-center justify-center"
                 style={{ backgroundImage: `url(${heroImage})` }}
             >
                 <h1 className="text-6xl font-bold text-white"><span className='text-orange-500'>Contact</span> Us</h1>
@@ -21,10 +21,11 @@ const ContactPage = () => {
 
                 {/* Contact Information */}
                 <div className="bg-white shadow-lg h-[40vh] rounded-lg md:w-1/2 p-6 text-center z-10 flex flex-col items-center justify-center">
-                    <h2 className="text-2xl font-bold mb-2">Contact Information</h2>
-                    <p className="text-gray-700 text-xl">Phone: +1 234 567 890</p>
-                    <p className="text-gray-700 text-xl">Email: info@organization.com</p>
-                    <p className="text-gray-700 text-xl">Address: 123 Main Street, City, Country</p>
+                    <h2 className="text-2xl text-gray-700 font-bold mb-2"><span className='text-orange-500'>Contact </span>Information</h2>
+                    <p className="text-gray-700 text-[13px] md:text-xl">Phone: <span className='text-orange-500'>+44-34335-3344</span></p>
+                    <p className="text-gray-700 text-[13px] md:text-xl">Email: <span className='text-orange-500'>devongnosiseducation@gmail.com</span></p>
+                    <p className="text-gray-700 text-[13px] md:text-xl">Address: <span className='text-orange-500'>Lux Mundi Estate Plot 3727 Lugbe, Off Airport 
+                    Road Abuja, Nigeria</span></p>
                 </div>
 
                 {/* Contact Form */}
@@ -35,9 +36,9 @@ const ContactPage = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
+                    <h2 className="text-2xl text-gray-700 font-bold mb-4 text-center">Drop a <span className='text-orange-500'>Message</span></h2>
                     <form className="space-y-4">
-                        <div>
+                        <div className='flex items-center'>
                             <label className="block text-gray-700">Name</label>
                             <input
                                 type="text"
@@ -45,7 +46,7 @@ const ContactPage = () => {
                                 placeholder="Your Name"
                             />
                         </div>
-                        <div>
+                        <div className='flex items-center'>
                             <label className="block text-gray-700">Email</label>
                             <input
                                 type="email"
@@ -53,8 +54,7 @@ const ContactPage = () => {
                                 placeholder="Your Email"
                             />
                         </div>
-                        <div>
-                            <label className="block text-gray-700">Message</label>
+                        <div className='flex items-center'>
                             <textarea
                                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 placeholder="Your Message"

@@ -50,23 +50,24 @@ const Landing = () => {
       <Hero/>
 
       {/* About Section */}
-      <motion.div
+      <div
         className="py-16 px-6 md:px-16 flex flex-col md:flex-row items-center gap-10"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.7 }}
+        viewport={{ once: true, amount: 0.1 }}
         variants={slideInLeft}
       >
         <div className="relative md:w-1/2 flex justify-center">
+        <motion.div variants={slideInLeft}>
             <img
               src={about}
               alt="About Us"
               className="md:w-full rounded-xl shadow-lg"
-            />
+            /></motion.div>
         </div>
         <motion.div
           className="md:w-1/2 text-center md:text-left"
-          variants={slideInRight}
+          variants={slideInLeft}
         >
           <h2 className="text-3xl font-semibold text-gray-800"><span className="text-orange-500">About </span>Us</h2>
           <p className="mt-4 text-gray-600">Devongnosis Education (DGE) is a global network of experienced
@@ -75,7 +76,7 @@ providing world-class knowledge-based services to public and private
 sector institutions within and outside Africa.</p>
           <Link to="/about" className="mt-6 inline-block px-6 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-md hover:scale-105 transition-transform hover:bg-white hover:text-orange-500">Learn More</Link>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Courses Section with Carousel */}
       <motion.div

@@ -73,9 +73,8 @@ const Carousel = () => {
           style={{ scrollbarWidth: "none" }}
         >
           {[...logos, ...logos].map((logo, index) => (
-            <div key={index} className="w-35 h-20 flex items-center justify-center shrink-0 hover:scale-110 duration-300">
+            <div key={index} className="w-35 h-auto flex items-center justify-center shrink-0 hover:scale-110 duration-300">
               <img src={logo} alt={`Company logo ${index + 1}`} className="w-full h-auto" />
-              <div className="absolute inset-0 bg-opacity-50 transition-opacity duration-300 hover:bg-opacity-0"></div>
             </div>
           ))}
         </div>
