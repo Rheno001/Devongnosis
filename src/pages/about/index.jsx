@@ -66,7 +66,7 @@ function About() {
       </div>
 
       {/* Chairman Section */}
-      <section className="flex flex-col-reverse md:flex-row items-center gap-4 justify-between px-6 md:px-16 py-[40px] text-center">
+      <section className="hidden md:flex flex-col-reverse md:flex-row items-center gap-4 justify-between px-6 md:px-16 py-[40px] text-center">
         <div className='text-center md:text-left'>
         <motion.h2
           className="text-3xl font-semibold text-gray-800 mb-2"
@@ -124,12 +124,12 @@ and occupation.        </motion.p>
       </section>
 
       {/* Vision Section */}
-      <section className="flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-16 text-center bg-gray-200 relative">
+      <section className="flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-16 text-center bg-white relative">
         
           {/* First Div */}
           <div className="md:w-1/2 p-4">
             <motion.h2
-              className="text-3xl md:text-left font-semibold text-gray-800 mb-4"
+              className="text-2xl md:text-3xl md:text-left font-bold text-gray-800 mb-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
@@ -137,7 +137,7 @@ and occupation.        </motion.p>
               Devongnosis Education
             </motion.h2>
             <motion.p
-              className="text-gray-600 mb-4 md:text-left"
+              className="text-[12px] md:text-[16px] text-gray-600 mb-4 md:text-left"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 1 }}
@@ -178,7 +178,7 @@ edge training services across a broad spectrum of sectors.
               transition={{ duration: 0.5 }}
             >
               <h3 className="text-2xl font-bold mb-4">More About Our Devongnosis Education</h3>
-              <p className="text-gray-700 mb-4">
+              <p className="text-[12px] md:text-[16px] text-gray-700 mb-4">
               In line with our strategy for realizing set
 objectives, Devongnosis organizes
 National and International Programmes
@@ -221,10 +221,10 @@ understanding of these challenges.
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaAngleDoubleRight className="text-4xl text-orange-500 h-[130px] w-[220px] mr-[20px]" />
+            <FaAngleDoubleRight className="text-4xl text-orange-500  h-[75px] w-[75px] md:h-[130px] md:w-[220px] md:mr-[20px]" />
             <div>
-            <h2 className="text-2xl md:text-left font-bold text-gray-800 mb-[2px]">Our Mission</h2>
-            <p className="text-gray-600 md:text-left">Our mission is to create a
+            <h2 className="text-xl md:text-2xl md:text-left font-bold text-gray-800 mb-[2px]">Our Mission</h2>
+            <p className="text-[12px] md:text-[16px] text-gray-600 md:text-left">Our mission is to create a
 platform, build resourceful
 capacity, project and bring high
 impact development programs
@@ -243,10 +243,10 @@ and public sectors</p>
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaBullseye className="text-4xl text-orange-500 h-[130px] w-[120px] mr-[20px]" />
+            <FaBullseye className="text-4xl text-orange-500 md:h-[130px] md:w-[120px] md:mr-[20px]" />
             <div>
-            <h2 className="text-2xl md:text-left font-bold text-gray-800 mb-[2px]">Our Vision</h2>
-            <p className="text-gray-600 md:text-left">Our vision is to transform the
+            <h2 className="text-xl md:text-2xl md:text-left font-bold text-gray-800 mb-[2px]">Our Vision</h2>
+            <p className="text-[12px] md:text-[16px] text-gray-600 md:text-left">Our vision is to transform the
 learning world in delivering
 sustainable human capital for
 the present and the future</p>
@@ -261,10 +261,10 @@ the present and the future</p>
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaAngleDoubleLeft className="text-4xl text-orange-500 h-[130px] w-[120px] mr-[20px]" />
+            <FaAngleDoubleLeft className="text-4xl text-orange-500 md:h-[130px] md:w-[120px] md:mr-[20px]" />
             <div>
-            <h2 className="text-2xl md:text-left font-bold text-gray-800 mb-[2px]">Our Guiding Attitude</h2>
-            <p className="text-gray-600 md:text-left">Our primary focus is designing,
+            <h2 className="text-xl md:text-2xl md:text-left font-bold text-gray-800 mb-[2px]">Our Guiding Attitude</h2>
+            <p className="text-[12px] md:text-[16px] text-gray-600 md:text-left">Our primary focus is designing,
 developing and delivering both
 o -site and on-site training
 programmes.</p>
