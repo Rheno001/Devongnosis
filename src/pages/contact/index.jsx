@@ -20,7 +20,7 @@ const ContactPage = () => {
             <section className="container mx-auto py-12 flex flex-col items-center justify-center md:flex-row gap-8 px-[40px]">
 
                 {/* Contact Information */}
-                <div className="bg-white shadow-lg h-[40vh] rounded-lg md:w-1/2 p-6 text-center z-10 flex flex-col items-center justify-center">
+                <div className="bg-white md:mr-[-50px] md:z-100 shadow-lg h-[40vh] rounded-lg md:w-1/2 p-6 text-center flex flex-col items-center justify-center">
                     <h2 className="text-2xl text-gray-700 font-bold mb-2"><span className='text-orange-500'>Contact </span>Information</h2>
                     <p className="text-gray-700 text-[13px] md:text-xl">Phone: <span className='text-orange-500'>+44-34335-3344</span></p>
                     <p className="text-gray-700 text-[13px] md:text-xl">Email: <span className='text-orange-500'>devongnosiseducation@gmail.com</span></p>
