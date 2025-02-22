@@ -33,22 +33,6 @@ const HeroSection = () => {
         return () => clearInterval(interval);
     }, []);
 
-    useEffect(() => {
-        const typingInterval = setInterval(() => {
-            setDisplayText((prev) => {
-                if (prev.length < texts[textIndex].length) {
-                    return texts[textIndex].slice(0, prev.length + 1);
-                } else {
-                    setTimeout(() => {
-                        setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-                        setDisplayText('');
-                    }, 1000); // Pause before switching text
-                    return prev;
-                }
-            });
-        }, 150); // Typing speed
-        return () => clearInterval(typingInterval);
-    }, [textIndex, texts]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
