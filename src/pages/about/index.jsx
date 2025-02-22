@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import logo from '../../devalone.png'
 import Chair from '../../gen.jpg'
+import { FaBullseye } from 'react-icons/fa';
+import { FaAngleDoubleRight } from "react-icons/fa";
+import { FaAngleDoubleLeft } from "react-icons/fa";
 
 function About() {
   const [offsetY, setOffsetY] = useState(0);
+  const [showCard, setShowCard] = useState(false);
 
   const handleScroll = () => {
     setOffsetY(window.pageYOffset);
@@ -14,6 +18,10 @@ function About() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  const handleCardClick = (cardId) => {
+    setActiveCard(cardId);
+    setShowCard(true);
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -68,13 +76,6 @@ function About() {
         >
           A word from our chairman
         </motion.h2>
-        <motion.div
-          className="w-[55%] md:w-[50%] mx-auto md:mx-0 bg-orange-500 font-bold h-[5px] mb-2"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-        </motion.div>
         <motion.p
           className="text-gray-600"
           initial={{ opacity: 0 }}
@@ -93,8 +94,8 @@ information as well as relevant
 competencies (skills, attitude, aptitude,
 etc.) Eective education therefore should
 go beyond mere literacy- ability to read and
-write. It should incorporate ability to “do”
-and “apply” that is, it should equip the
+write. It should incorporate ability to "do"
+and "apply" that is, it should equip the
 
 leaners with some form of technical know-
 how. These includes the ability to use
@@ -123,24 +124,158 @@ and occupation.        </motion.p>
       </section>
 
       {/* Vision Section */}
-      <section className="flex items-center py-16 px-6 md:px-16 text-center bg-gray-200">
-        <motion.h2
-          className="text-3xl font-semibold text-gray-800 mb-8"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Devongnosis Education
-        </motion.h2>
-        <motion.p
-          className="text-gray-600"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
-          To be a leader in innovative education solutions.
-        </motion.p>
+      <section className="flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-16 text-center bg-gray-200 relative">
+        
+          {/* First Div */}
+          <div className="md:w-1/2 p-4">
+            <motion.h2
+              className="text-3xl md:text-left font-semibold text-gray-800 mb-4"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              Devongnosis Education
+            </motion.h2>
+            <motion.p
+              className="text-gray-600 mb-4 md:text-left"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
+              Devongnosis Education (DGE) is a global network of experienced
+professionals and consultants assembled with the core objective of
+providing world-class knowledge-based services to public and private
+sector institutions within and outside Africa. We leverage on a network of
+excellent partnership with world renowned training establishments, and
+business schools as well as ICT organizations in the US, Asia and Europe to
+provide combined wealth of expertise, re-engineered systems and cutting
+edge training services across a broad spectrum of sectors.
+            </motion.p>
+            <motion.button
+              className="text-white md:flex text-lg px-6 py-2 rounded-3xl bg-orange-500 transition-transform duration-300 hover:scale-105 hover:text-orange-500 shadow-md hover:bg-white"
+              onClick={() => setShowCard(true)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Read More
+            </motion.button>
+          </div>
+
+        {/* Overlay and Card */}
+        {showCard && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.div
+              className="bg-white p-8 rounded-lg shadow-lg max-w-md"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h3 className="text-2xl font-bold mb-4">More About Our Devongnosis Education</h3>
+              <p className="text-gray-700 mb-4">
+              In line with our strategy for realizing set
+objectives, Devongnosis organizes
+National and International Programmes
+(Conferences, Workshops, Seminars and
+Exhibitions) with themes carefully
+selected to address critical and
+contemporary challenges. Our
+Programmes are organized both within
+and outside Nigeria. We collaborate with
+appropriate public and private sector
+organizations and professional
+institutions to deliver on our set goals and
+objectives.
+Our faculty is composed of highly skilled
+professionals in public and executive
+training/mentoring, skill acquisition &
+capacity building. Our proposal is
+unequalled as it is particularly tailored to
+ameliorate the challenges faced by the
+Nigeria Customs Service. Our experience
+and feedback from previous trainings
+conducted for the service gives us a clear
+understanding of these challenges.
+              </p>
+              <button
+                className="text-white text-lg px-6 py-2 rounded-3xl bg-orange-500 transition-transform duration-300 hover:scale-105 hover:text-orange-500 shadow-md hover:bg-white"
+                onClick={() => setShowCard(false)}
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+
+<div className="flex flex-col gap-4 md:w-1/2">
+          {/* First Div */}
+          <motion.div
+            className="flex p-4 rounded-xl cursor-pointer"
+            onClick={() => handleCardClick(1)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FaAngleDoubleRight className="text-4xl text-orange-500 h-[130px] w-[220px] mr-[20px]" />
+            <div>
+            <h2 className="text-2xl md:text-left font-bold text-gray-800 mb-[2px]">Our Mission</h2>
+            <p className="text-gray-600 md:text-left">Our mission is to create a
+platform, build resourceful
+capacity, project and bring high
+impact development programs
+and a wide range of consultancy
+services that yields exceptional
+human performance in private
+and public sectors</p>
+            </div>
+            
+          </motion.div>
+
+          {/* Second Div */}
+          <motion.div
+            className="flex p-4 rounded-xl cursor-pointer"
+            onClick={() => handleCardClick(1)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FaBullseye className="text-4xl text-orange-500 h-[130px] w-[120px] mr-[20px]" />
+            <div>
+            <h2 className="text-2xl md:text-left font-bold text-gray-800 mb-[2px]">Our Vision</h2>
+            <p className="text-gray-600 md:text-left">Our vision is to transform the
+learning world in delivering
+sustainable human capital for
+the present and the future</p>
+            </div>
+            
+          </motion.div>
+
+          {/* Third Div */}
+          <motion.div
+            className="flex p-4 rounded-xl cursor-pointer"
+            onClick={() => handleCardClick(1)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <FaAngleDoubleLeft className="text-4xl text-orange-500 h-[130px] w-[120px] mr-[20px]" />
+            <div>
+            <h2 className="text-2xl md:text-left font-bold text-gray-800 mb-[2px]">Our Guiding Attitude</h2>
+            <p className="text-gray-600 md:text-left">Our primary focus is designing,
+developing and delivering both
+o -site and on-site training
+programmes.</p>
+            </div>
+            
+          </motion.div>
+        </div>
+
       </section>
+
+
 
       {/* Goals Section */}
       <section className="py-16 px-6 md:px-16 text-center">
