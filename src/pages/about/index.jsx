@@ -5,6 +5,8 @@ import Chair from '../../gen.jpg'
 import { FaBullseye } from 'react-icons/fa';
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { FaAngleDoubleLeft } from "react-icons/fa";
+import { GiFallingOvoid } from "react-icons/gi";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 function About() {
   const [offsetY, setOffsetY] = useState(0);
@@ -127,7 +129,7 @@ and occupation.        </motion.p>
       <section className="flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-16 text-center bg-white relative">
         
           {/* First Div */}
-          <div className="md:w-1/2 p-4">
+          <div className="md:w-1/2 p-4 bg-gray-100 md:bg-white mb-[20px] md:mb-[0]">
             <motion.h2
               className="text-2xl md:text-3xl md:text-left font-bold text-gray-800 mb-4"
               initial={{ opacity: 0, y: 50 }}
@@ -279,24 +281,43 @@ programmes.</p>
 
       {/* Goals Section */}
       <section className="py-16 px-6 md:px-16 text-center">
-        <motion.h2
-          className="text-3xl font-semibold text-gray-800 mb-8"
+        <div className='top flex items-center justify-between'>
+        <motion.div
+          className="flex flex-col"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Our Goals
-        </motion.h2>
-        <motion.ul
-          className="text-gray-600 list-disc list-inside"
+          <div className='flex gap-2'><GiFallingOvoid className='text-orange-500'/><span className='text-[12px]'>Our Courses</span></div>
+          <div className='flex'><h2 className='text-xl text-left md:text-2xl font-bold'>Explore our <br /> <span className='text-orange-500'>different courses</span></h2></div>
+        </motion.div>
+        <motion.div
+          className="hidden md:flex flex-col"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <p className='text-gray-800 text-left'>Take your skills to the next level.</p>
+          <div className='flex items-center gap-2 text-orange-500 border-b-2 border-orange-500 w-3/5'><span className='text-[12px font-bold]'>Ask a question</span><FaArrowRightLong /></div>
+        </motion.div>
+        </div>
+        
+        <motion.div
+          className="course1"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          <li>Expand our reach globally.</li>
-          <li>Enhance our curriculum with cutting-edge technology.</li>
-          <li>Foster a community of lifelong learners.</li>
-        </motion.ul>
+          
+        </motion.div>
+        <motion.div
+          className="course2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          
+        </motion.div>
       </section>
 
       {/* Detailed Explanation Section */}
