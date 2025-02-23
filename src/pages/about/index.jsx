@@ -26,7 +26,7 @@ function About() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section */}
-      <div className="relative h-[500px] w-full bg-gray-300 overflow-hidden">
+      <div className="relative h-[500px] w-full bg-orange-500/90 overflow-hidden">
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
           style={{
@@ -35,7 +35,7 @@ function About() {
             willChange: 'transform',
           }}
         >
-          <div className="absolute inset-0 bg-black bg-opacity-50  justify-center items-center text-white text-center">
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center">
             <motion.img
               src={logo} // Replace with the actual path to your logo
               alt="Organization Logo"
